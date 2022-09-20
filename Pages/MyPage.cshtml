@@ -1,0 +1,16 @@
+@page
+@model MyPageModel
+@{
+    ViewData["Title"] = "My Page";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>id: @Model.BtcAud.id</p>
+<p>baseCurrency: @Model.BtcAud.baseCurrency</p>
+<p>counterCurrency: @Model.BtcAud.counterCurrency</p>
+<p>reference: @Model.BtcAud.reference</p>
+<p>bid: @Model.BtcAud.bid</p>
+<p>ask: @Model.BtcAud.ask</p>
+<p>timestamp: @Model.BtcAud.timestamp</p>
+<p>delta1d: @Model.BtcAud.delta1d</p>
+<p>delta7d: @Model.BtcAud.delta7d</p>
