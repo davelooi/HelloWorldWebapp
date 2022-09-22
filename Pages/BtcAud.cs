@@ -4,18 +4,26 @@ using System.Text.Json;
 
 namespace HelloWorldWebapp.Pages;
 
-public class MyPageModel : PageModel
+public class BtcAudModel : PageModel
 {
     private readonly ILogger<PrivacyModel> _logger;
 
-    public MyPageModel(ILogger<PrivacyModel> logger)
+    public BtcAudModel(ILogger<PrivacyModel> logger)
     {
         _logger = logger;
     }
 
     static readonly HttpClient client = new HttpClient();
 
-    public Rate BtcAud { get; set; } = default!;
+    public Rate CurrentRate { get; set; } = default!;
+
+    public async Task<IActionResult> OnGetAsync()
+    {
+        var rateTask = FetchRateAsync();
+        var rate = await rateTask;
+        CurrentRate = rate!;
+        return Page();
+    }
 
     public class Rate
     {
@@ -28,19 +36,6 @@ public class MyPageModel : PageModel
         public string? timestamp { get; set; }
         public string? delta1d { get; set; }
         public string? delta7d { get; set; }
-    }
-
-    public async Task<IActionResult> OnGetAsync()
-    {
-        // var streamTask = client.GetStreamAsync("https://api.pricehub.coinjar.com/rates/BTC/AUD");
-        // Rate? rate = await JsonSerializer.DeserializeAsync<Rate>(await streamTask);
-
-        // var msg = await client.GetStringAsync("https://api.pricehub.coinjar.com/rates/BTC/AUD");
-        // Console.Write(msg);
-        var rateTask = FetchRateAsync();
-        var rate = await rateTask;
-        BtcAud = rate!;
-        return Page();
     }
 
     private static async Task<Rate> FetchRateAsync()

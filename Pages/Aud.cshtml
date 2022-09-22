@@ -1,0 +1,17 @@
+@page
+@model AudModel
+@{
+    ViewData["Title"] = "AUD";
+}
+<h1>@ViewData["Title"]</h1>
+
+@using System.Reflection;
+@foreach (var rate in @Model.CurrentRates.rates!)
+{
+<pre><code>
+    @foreach (PropertyInfo prop in rate.GetType().GetProperties())
+    {
+        @($"{prop.Name}: {prop.GetValue(rate)}\n")
+    }
+</code></pre>
+}

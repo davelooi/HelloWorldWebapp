@@ -1,0 +1,18 @@
+@page
+@model BtcAudModel
+@{
+    ViewData["Title"] = "BTC/AUD";
+}
+<h1>@ViewData["Title"]</h1>
+
+<pre><code>
+id: @Model.CurrentRate.id
+baseCurrency: @Model.CurrentRate.baseCurrency
+counterCurrency: @Model.CurrentRate.counterCurrency
+reference: @Model.CurrentRate.reference
+bid: @Model.CurrentRate.bid
+ask: @Model.CurrentRate.ask
+timestamp: @Model.CurrentRate.timestamp
+delta1d: @Model.CurrentRate.delta1d
+delta7d: @Model.CurrentRate.delta7d
+</code></pre>
