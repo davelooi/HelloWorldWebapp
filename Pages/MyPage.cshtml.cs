@@ -32,12 +32,21 @@ public class MyPageModel : PageModel
 
     public async Task<IActionResult> OnGetAsync()
     {
-        var streamTask = client.GetStreamAsync("https://api.pricehub.coinjar.com/rates/BTC/AUD");
-        Rate? rate = await JsonSerializer.DeserializeAsync<Rate>(await streamTask);
+        // var streamTask = client.GetStreamAsync("https://api.pricehub.coinjar.com/rates/BTC/AUD");
+        // Rate? rate = await JsonSerializer.DeserializeAsync<Rate>(await streamTask);
 
         // var msg = await client.GetStringAsync("https://api.pricehub.coinjar.com/rates/BTC/AUD");
         // Console.Write(msg);
-        BtcAud = rate;
+        var rateTask = FetchRateAsync();
+        var rate = await rateTask;
+        BtcAud = rate!;
         return Page();
+    }
+
+    private static async Task<Rate> FetchRateAsync()
+    {
+        var streamTask = client.GetStreamAsync("https://api.pricehub.coinjar.com/rates/BTC/AUD");
+        Rate? rate = await JsonSerializer.DeserializeAsync<Rate>(await streamTask);
+        return rate!;
     }
 }

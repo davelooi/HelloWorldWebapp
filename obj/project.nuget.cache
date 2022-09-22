@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "M5E4Wz1qwS6vxNV3J4bUNh6DkZ/WuWTZjvrR1zBPIwdklOu7yOMcIvPZ+W3Mqq3B71/9faZQcfwFZblq4VQyUA==",
+  "dgSpecHash": "Rk1N3UlnO89AI+1Cy9eMeXXyxAk3kMoi3i+rcAwazuklUbbGj33cT1g9VPw3jZH5AMgZSFFcYeX2gIatoeIo/g==",
   "success": true,
   "projectFilePath": "/home/looi/code/HelloWorldWebapp/HelloWorldWebapp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/looi/.nuget/packages/google.api.gax/4.0.0/google.api.gax.4.0.0.nupkg.sha512",
+    "/home/looi/.nuget/packages/google.api.gax.rest/4.0.0/google.api.gax.rest.4.0.0.nupkg.sha512",
+    "/home/looi/.nuget/packages/google.apis/1.57.0/google.apis.1.57.0.nupkg.sha512",
+    "/home/looi/.nuget/packages/google.apis.auth/1.57.0/google.apis.auth.1.57.0.nupkg.sha512",
+    "/home/looi/.nuget/packages/google.apis.core/1.57.0/google.apis.core.1.57.0.nupkg.sha512",
+    "/home/looi/.nuget/packages/google.apis.storage.v1/1.57.0.2742/google.apis.storage.v1.1.57.0.2742.nupkg.sha512",
+    "/home/looi/.nuget/packages/google.cloud.storage.v1/4.1.0/google.cloud.storage.v1.4.1.0.nupkg.sha512",
+    "/home/looi/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "/home/looi/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/home/looi/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
