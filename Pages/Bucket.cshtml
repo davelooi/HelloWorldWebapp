@@ -1,0 +1,13 @@
+@page
+@model BucketModel
+@{
+    ViewData["Title"] = "Bucket";
+}
+<h1>@ViewData["Title"]</h1>
+
+@foreach (var obj in @Model.Objects)
+{
+<ul>
+  <li>@obj.Name</li>
+</ul>
+}
