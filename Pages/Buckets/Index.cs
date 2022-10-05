@@ -2,13 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Google.Cloud.Storage.V1;
 
-namespace HelloWorldWebapp.Pages;
+namespace HelloWorldWebapp.Pages.Buckets;
 
-public class BucketModel : PageModel
+public class IndexModel : PageModel
 {
     private readonly ILogger<PrivacyModel> _logger;
 
-    public BucketModel(ILogger<PrivacyModel> logger)
+    public IndexModel(ILogger<PrivacyModel> logger)
     {
         _logger = logger;
     }

@@ -1,5 +1,5 @@
 @page
-@model BucketModel
+@model Buckets.IndexModel
 @{
     ViewData["Title"] = "Bucket";
 }
@@ -8,6 +8,8 @@
 @foreach (var obj in @Model.Objects)
 {
 <ul>
-  <li>@obj.Name</li>
+  <li>
+    <a asp-area="" asp-page="./Details" asp-route-id="@obj.Name">@obj.Name</a>
+  </li>
 </ul>
 }
